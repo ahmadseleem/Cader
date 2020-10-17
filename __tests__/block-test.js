@@ -1,4 +1,5 @@
-const assert = require('assert');
+const assert = require("assert");
+const testUtil = require("./test-util");
 
 module.exports = (cader) => {
   // Blocks :
@@ -53,4 +54,13 @@ module.exports = (cader) => {
     100
   );
 };
+
+  /// Blocks: S-Expressions.
+  testUtil.test(`
+  (begin
+    (var x 10)
+    (var y 20)
+    (+ (* x 10) y))
+  `,
+  120);
 
